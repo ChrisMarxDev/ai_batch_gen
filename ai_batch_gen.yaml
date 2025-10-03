@@ -1,0 +1,25 @@
+output: assets/images/
+transparent: true
+model: openai:gpt-image-1
+
+count: 2
+
+text_prompt: |
+  3D claymation style with pastel colors
+
+images:
+  house: a suburban house with a roof and a door
+  tree: a small tree with green leaves and a bird on it
+  car: a small red famliy car
+
+
+# install using:
+# dart pub global activate ai_batch_gen
+# add OPENAI_API_KEY to the environment or an .env file or as openai_api_key in the yaml file
+# run:
+# ai_batch_gen generate
+# or to regenerate specific images:
+# ai_batch_gen generate -r tree house
+
+
+
