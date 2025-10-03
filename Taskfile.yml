@@ -1,0 +1,30 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+  test_dry_run:
+    cmds:
+      - dart run bin/ai_batch_gen.dart generate --dry-run --verbose
+  test_generate:
+    cmds:
+      - dart run bin/ai_batch_gen.dart generate --force --verbose
+  build:
+    cmds:
+      - dart compile exe bin/ai_batch_gen.dart -o ai_batch_gen
+    silent: true
+  
+  activate_local:
+    cmds:
+      - dart pub global activate --source path .
+  
+  pub_dry_run:
+    cmds:
+      - dart pub publish --dry-run
